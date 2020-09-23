@@ -8,6 +8,32 @@
   justify-content: center;
   align-items: center;
 }
-.card-height {
+/* .card-height {
   height: 545px;
 }
+ */
+@media screen and (max-width: 766px) {
+  .title-coler {
+    background-color: #f78bbd; /*緑色*/
+  }
+}
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+  .title-coler {
+    background-color: #6ab7ff; /*青色*/
+  }
+}
+@media screen and (max-width: 766px) {
+  .card-height {
+    height: I 269px;
+    margin-bottom: 23px;
+  }
+}
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+  .card-height {
+    height: 537px;
+  }
+}
+.image-sitle1 {
+  height: 256px;
+}
+
