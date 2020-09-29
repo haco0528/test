@@ -8,20 +8,48 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="test.CSS">
     <title>input</title>
+    <script type="text/javascript">
+      //   function dddd(){
+      //   console.log("nyankoro")
+      //   // window.alert('画面遷移！！');
+      //   console.log("nyankoro")
+      //   // window.location.href = 'file:///Users/haco/Documents/test/index.html';
+      // }
+      function submitAction(value1, value2){
+        var btn = document.form1.btn
+        if (value1 != "" && value2) {
+          btn.disabled = false
+        } else { 
+          btn.disabled = true
+        }
+      }
+      window.addEventListener('DOMContentLoaded',function(){
+        var _this = this                
+        document.form1.field1.addEventListener('keyup',function(){
+          var inputValue = document.form1.field2.checked;
+          _this.submitAction(this.value, inputValue)
+        },false)
+        document.form1.field2.addEventListener('change',function(){
+          var inputValue = document.form1.field1.value;
+          _this.submitAction(inputValue, this.checked)
+        },false)
+      },false)
+    </script>
   </head>
   <body> 
+    <h1 class="title-margin">
+      <div>
+        <div class="p-3 mb-2 text-white text-center col-12 title-coler site-header">input</div>
+      </div>
+    </h1>
+
 		<div class="container">
-      <h1 class="title-margin">
-				<div>
-					<div class="p-3 mb-2 text-white text-center col-12 title-coler">input</div>
-        </div>
-      </h1>
-      <form>
+      <form method="POST" action="file:///Users/haco/Documents/test/index.html" name="form1">
         <div class="form-group">
           <div class="form-group row">
             <label for="colFormLabel" class="col--2 col-form-label">name</label>
             <div class="col-md-10">
-              <input type="input" class="form-control" placeholder="name">
+              <input type="input" name="field1" class="form-control" id="input1" placeholder="name">
             </div>
           </div>
         </div>
@@ -43,14 +71,43 @@
           <label>message</label>
           <textarea class="form-control" rows="3"></textarea>
         </div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input">
-          <label class="custom-control-label">Check</label>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" name="field2">
+          <label class="form-check-label" for="exampleCheck1">Check</label>
         </div>
+        <button type="submit" class="btn btn-success" name="btn" disabled>submit</button>
+        <!-- <div class="form-group">
+          <div class="form-group row">
+            <label for="colFormLabel" class="col--2 col-form-label">name</label>
+            <div class="col-md-10">
+              <input type="input" name="form1" class="form-control" id="input1" placeholder="name">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group row">
+            <label for="exampleFormControlSelect1" class="col-md-2 col-form-label">age</label>
+            <div class="col-md-10">
+              <select class="form-control" name="field2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>message</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="checkbox1">
+          <label class="form-check-label" for="exampleCheck1">Check</label>
+        </div>
+        <button type="submit" class="btn btn-success" id="submit1" disabled>submit</button> -->
       </form>
-      <a href="file:///Users/haco/Documents/test/index.html">
-        <button type="button" class="btn btn-success">submit</button>
-      </a>
 			<footer>
 				<hr>
         <div class="text-center">

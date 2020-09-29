@@ -1,6 +1,6 @@
 
 .title-margin {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .image-sitle {
   height: 256px;
@@ -36,4 +36,13 @@
 .image-sitle1 {
   height: 256px;
 }
+.text-card {
+  margin-bottom: 10px;
+}
+.site-header{
+  z-index: 1;
+  position: fixed; top:-8px;
+}
+
+
 
