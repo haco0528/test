@@ -16,9 +16,16 @@
       //   // window.location.href = 'file:///Users/haco/Documents/test/index.html';
       // }
       function submitAction(value1, value2){
+        var alertId = document.getElementById("alert-display");
         var btn = document.form1.btn
         if (value1 != "" && value2) {
-          btn.disabled = false
+          if (ja2Bit(value1)) {
+            alertId.style.display = "none"
+            btn.disabled = false
+          } else {
+            alertId.style.display = "block"
+            btn.disabled = true
+          }
         } else { 
           btn.disabled = true
         }
@@ -34,6 +41,9 @@
           _this.submitAction(inputValue, this.checked)
         },false)
       },false)
+      function ja2Bit ( str ) {
+        return ( str.match(/^[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf]+$/) )? true : false
+      }
     </script>
   </head>
   <body> 
@@ -44,11 +54,14 @@
       </a>
       </div>
     </h1>
-
 		<div class="container">
       <form method="POST" action="index.html" name="form1">
         <div class="form-group">
+          <div class="alert alert-danger" role="alert" style="display: none;" id="alert-display">
+            日本語じゃなきゃダメ！！
+          </div>
           <div class="form-group row">
+            
             <label for="colFormLabel" class="col--2 col-form-label">name</label>
             <div class="col-md-10">
               <input type="input" name="field1" class="form-control" id="input1" placeholder="name">
